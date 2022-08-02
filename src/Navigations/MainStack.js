@@ -12,7 +12,7 @@ const MainStack=()=>{
     const [isSplash,setIsSplash]=useState(true);
 
     useEffect(()=>{
-        setTimeout(()=>{setIsSplash(false)},3000)
+        setTimeout(()=>{setIsSplash(false)},3000 )
     },[])
     return(
         <NavigationContainer>
