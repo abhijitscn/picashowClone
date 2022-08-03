@@ -6,13 +6,14 @@ import HomeScreen from '../Screens/Home.Screen';
 import BollywoodScreen from '../Screens/Bollywood.Screen';
 import HollyWoodScreen from '../Screens/HollyWood.Screen';
 import SeriesScreen from '../Screens/Series.Screen';
+import SearchScrean from '../Screens/SeachScreen';
 
 const MainStack=()=>{
     const Stack=createNativeStackNavigator();
     const [isSplash,setIsSplash]=useState(true);
 
     useEffect(()=>{
-        setTimeout(()=>{setIsSplash(false)},3000 )
+        setTimeout(()=>{setIsSplash(false)},3000)
     },[])
     return(
         <NavigationContainer>
@@ -24,6 +25,7 @@ const MainStack=()=>{
                 <Stack.Screen name='Bollywood' component={BollywoodScreen}/>
                 <Stack.Screen name='Hollywood' component={HollyWoodScreen}/>
                 <Stack.Screen name='Series' component={SeriesScreen}/>
+                <Stack.Screen name='Search' component={SearchScrean}/>
             </Stack.Navigator>
         </NavigationContainer>
     )
