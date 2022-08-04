@@ -7,6 +7,8 @@ import BollywoodScreen from '../Screens/Bollywood.Screen';
 import HollyWoodScreen from '../Screens/HollyWood.Screen';
 import SeriesScreen from '../Screens/Series.Screen';
 import SearchScrean from '../Screens/SeachScreen';
+import LiveTVScreen from '../Screens/LIveTVScreen';
+import VideoPlayer from '../Screens/VideoPlayer';
 
 const MainStack=()=>{
     const Stack=createNativeStackNavigator();
@@ -26,6 +28,8 @@ const MainStack=()=>{
                 <Stack.Screen name='Hollywood' component={HollyWoodScreen}/>
                 <Stack.Screen name='Series' component={SeriesScreen}/>
                 <Stack.Screen name='Search' component={SearchScrean}/>
+                <Stack.Screen name='Livetv' component={LiveTVScreen}/>
+                <Stack.Screen name='video' component={VideoPlayer}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

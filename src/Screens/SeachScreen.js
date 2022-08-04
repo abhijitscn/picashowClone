@@ -12,7 +12,7 @@ const SearchScrean=()=>{
     const[value,setValue]=useState('');
     const[tempValue,setTempValue]=useState([]);
     const route=useRoute();
-    const {data}=route.params;
+    const {data,type}=route.params;
 
     useEffect(()=>{
         filterSearchData();
@@ -43,13 +43,21 @@ const SearchScrean=()=>{
                 <Feather name='mic' color={'yellow'} size={responsiveWidth(8)}/>
             </View>
             {value?
+            <>
+                {tempValue.length>0?
             <FlatList
                 data={tempValue}
                 renderItem={({item})=>{
-                    return <MovieCard data={item} type={'Bollywood'}/>
+                    return <MovieCard data={item} type={type}/>
                 }}
                 numColumns={3}
             />
+            :
+            <View style={searchStyle.noDataView}>
+                <Text style={searchStyle.noDataText}>Oppss no data found !!</Text>
+            </View>
+            }
+            </>
             :
             <View style={searchStyle.categoryView}>
                 {serachData.map((d,i)=>(
@@ -57,12 +65,8 @@ const SearchScrean=()=>{
                     <Text style={[searchStyle.categoryText,{color:randomColor()}]}>{d.name}</Text>
                 </TouchableOpacity>
                 ))}
-            </View> 
-            
+            </View>            
             }
-            
-
-
         </SafeAreaView>
         
         </>
@@ -107,6 +111,13 @@ const searchStyle=StyleSheet.create({
     categoryText:{
         color:'white',
         fontSize:responsiveWidth(5)
+    },
+    noDataView:{
+        marginTop:responsiveHeight(40),
+        alignItems:'center'
+    },
+    noDataText:{
+        color:'yellow'
     }
 
 })

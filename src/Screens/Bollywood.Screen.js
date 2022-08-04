@@ -22,7 +22,7 @@ const BollywoodScreen=()=>{
                 }}
                 numColumns={3}
             />
-            <TouchableOpacity style={BollyStyle.SearchButton} onPress={()=>{navigation.navigate('Search',{data:data})}}>
+            <TouchableOpacity style={BollyStyle.SearchButton} onPress={()=>{navigation.navigate('Search',{data:data,type:'Bollywood'})}}>
                 <Ionicons name='search' color='yellow' size={responsiveWidth(5)}/>
             </TouchableOpacity> 
               

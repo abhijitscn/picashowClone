@@ -6,12 +6,12 @@ const MovieCard=({data,type})=>{
         <>
         <View style={MovieStyle.main}>
             <View style={MovieStyle.headerView}>
-                <Text style={MovieStyle.headerText}>{((type==="HollyWood")||(type==="Bollywood"))?data.qualityLable:data.rating}</Text>
+                <Text style={MovieStyle.headerText}>{((type==="Hollywood")||(type==="Bollywood"))?data.qualityLable:data.rating}</Text>
             </View>
             <Image source={{uri:data.posterUrl}} style={MovieStyle.posterImg}/>
             <View style={MovieStyle.BottomView}>
                 <Text style={MovieStyle.BottomText1}>{data.name}</Text>
-                <Text style={MovieStyle.BottomText2}>{((type==="HollyWood")||(type==="Bollywood"))?data.year:`Total Sessions ${data.seasons.length}`}</Text>
+                <Text style={MovieStyle.BottomText2}>{((type==="Hollywood")||(type==="Bollywood"))?data.year:`Total Sessions ${data.seasons.length}`}</Text>
             </View>
         </View>
 
